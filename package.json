@@ -15,7 +15,7 @@
   },
   "homepage": "https://github.com/kaspernj/diggerize#readme",
   "devDependencies": {
-    "jasmine": "^4.0.2"
+    "jasmine": "^5.7.1"
   },
   "scripts": {
     "test": "jasmine"
