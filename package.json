@@ -1,7 +1,7 @@
 {
   "name": "diggerize",
   "type": "module",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Fetch keys for object with a default or fail",
   "main": "src/index.js",
   "repository": {
