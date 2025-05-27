@@ -1,9 +1,9 @@
 {
   "name": "diggerize",
   "type": "module",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Fetch keys for object with a default or fail",
-  "main": "src/src/index.js",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/kaspernj/diggerize.git"
