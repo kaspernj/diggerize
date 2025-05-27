@@ -1,4 +1,4 @@
-import {digg} from "../src/index.mjs"
+import {digg} from "../src/index.js"
 
 const hash = {
   people: [
