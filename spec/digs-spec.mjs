@@ -1,4 +1,4 @@
-import {digs} from "../index.mjs"
+import {digs} from "../src/index.mjs"
 
 const hash = {firstName: "Kasper", lastName: "Johansen"}
 
