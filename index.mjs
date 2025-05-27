@@ -1,4 +1,4 @@
-function digger(target, keys, {callFunctions = false, throwError = true}) {
+const digger = (target, keys, {callFunctions, throwError}) => {
   let digged = target
   const currentPath = []
 
@@ -23,15 +23,10 @@ function digger(target, keys, {callFunctions = false, throwError = true}) {
   return digged
 }
 
-const dig = function dig(target, ...keys) {
-  return digger(target, keys, {throwError: false})
-}
+const dig = (target, ...keys) => digger(target, keys, {throwError: false})
+const digg = (target, ...keys) => digger(target, keys, {throwError: true})
 
-const digg = function dig(target, ...keys) {
-  return digger(target, keys, {throwError: true})
-}
-
-const digs = function digs(target, ...keys) {
+const digs = (target, ...keys) => {
   const result = {}
 
   for(let key of keys) {
