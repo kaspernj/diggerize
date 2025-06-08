@@ -5,10 +5,6 @@
 ### Import the functions
 
 ```js
-const {dig, digg, digs} = require("diggerize")
-```
-
-```js
 import {dig, digg, digs} from "diggerize"
 ```
 
@@ -21,7 +17,7 @@ const myObject = {
   people: [
     {
       firstName: "Kasper",
-      lastName: "Nielsen"
+      lastName: "Stöckel"
     }
   ]
 }
