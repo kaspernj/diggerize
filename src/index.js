@@ -1,4 +1,10 @@
-const digger = (target, keys, {callFunctions, throwError}) => {
+/**
+ * @param {any} target
+ * @param {any[]} keys
+ * @param {{callFunctions?: boolean, throwError?: boolean}} options
+ * @returns {any}
+ */
+function digger(target, keys, {callFunctions, throwError}) {
   let digged = target
   const currentPath = []
 
@@ -23,10 +29,30 @@ const digger = (target, keys, {callFunctions, throwError}) => {
   return digged
 }
 
-const dig = (target, ...keys) => digger(target, keys, {throwError: false})
-const digg = (target, ...keys) => digger(target, keys, {throwError: true})
+/**
+ * @param {any} target
+ * @param  {...any} keys
+ * @returns {any}
+ */
+function dig(target, ...keys) {
+  return digger(target, keys, {throwError: false})
+}
 
-const digs = (target, ...keys) => {
+/**
+ * @param {any} target
+ * @param {...any} keys
+ * @returns {any}
+ */
+function digg(target, ...keys) {
+  return digger(target, keys, {throwError: true})
+}
+
+/**
+ * @param {any} target
+ * @param  {...any} keys
+ * @returns {any}
+ */
+function digs(target, ...keys)  {
   const result = {}
 
   for(let key of keys) {

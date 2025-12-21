@@ -3,7 +3,11 @@
   "type": "module",
   "version": "1.0.9",
   "description": "Fetch keys for object with a default or fail",
-  "main": "src/index.js",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "files": [
+    "build/**"
+  ],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/kaspernj/diggerize.git"
@@ -15,9 +19,14 @@
   },
   "homepage": "https://github.com/kaspernj/diggerize#readme",
   "devDependencies": {
-    "jasmine": "^5.7.1"
+    "jasmine": "^5.7.1",
+    "typescript": "^5.9.3"
   },
   "scripts": {
-    "test": "jasmine"
+    "build": "rm -rf build && tsc",
+    "prepublishOnly": "npm run build",
+    "test": "jasmine",
+    "typecheck": "tsc --noEmit",
+    "watch": "tsc -w"
   }
 }
