@@ -11,7 +11,7 @@ describe("digs", () => {
 
   it("throws an error if an given key couldnt be found", () => {
     const test = () => {
-      const {firstName, middleName, lastName} = digs(hash, "firstName", "middleName", "lastName")
+      digs(hash, "firstName", "middleName", "lastName")
     }
 
     expect(test).toThrow(new Error("Target didn't contain expected key: middleName"))

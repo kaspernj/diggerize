@@ -29,7 +29,7 @@ dig(myObject, "people", 1, "firstName") //=> null
 
 ### digg
 
-This functions like `dig` but it will fail if one of the keys isn't found.
+This functions like `dig` but it will throw an error if one of the keys isn't found.
 
 ```js
 const myObject = {
@@ -42,7 +42,7 @@ const myObject = {
 }
 
 digg(myObject, "people", 0, "firstName") //=> "Kasper"
-digg(myObject, "people", 1, "firstName") //=> Fails because 1 isn't found in the people array
+digg(myObject, "people", 1, "firstName") //=> Throws an error because 1 isn't found in the people array
 ```
 
 ### digs
