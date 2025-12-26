@@ -13,7 +13,12 @@ function digger(target, keys, {callFunctions, throwError}) {
 
     if (!(key in digged)) {
       if (throwError) {
-        throw new Error(`Path didn't exist: ${currentPath.join(".")}`)
+        const availableKeys = digged && typeof digged === "object" ? Object.keys(digged) : []
+        const availableText = availableKeys.length
+          ? ` Available keys: ${availableKeys.join(", ")}.`
+          : " Available keys: none."
+
+        throw new Error(`Path didn't exist: ${currentPath.join(".")}.${availableText}`)
       } else {
         return undefined
       }

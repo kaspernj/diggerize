@@ -21,11 +21,15 @@ describe("digg", () => {
   })
 
   it("raises an error if path cannot be found", () => {
-    expect(() => digg(hash, "people", 1, "middleName")).toThrow(new Error("Path didn't exist: people.1.middleName"))
+    expect(() => digg(hash, "people", 1, "middleName")).toThrow(
+      new Error("Path didn't exist: people.1.middleName. Available keys: firstName, lastName.")
+    )
   })
 
   it("raises an error if a nested path cannot be found", () => {
-    expect(() => digg(hash, "people", 0, "siblings", 0, "middleName")).toThrow(new Error("Path didn't exist: people.0.siblings.0.middleName"))
+    expect(() => digg(hash, "people", 0, "siblings", 0, "middleName")).toThrow(
+      new Error("Path didn't exist: people.0.siblings.0.middleName. Available keys: firstName, lastName.")
+    )
   })
 
   it("doesnt call through functions", () => {

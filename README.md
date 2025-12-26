@@ -1,5 +1,13 @@
 # diggerize
 
+Small utility library for safely digging values out of objects and requiring keys with helpful errors.
+
+## Installation
+
+```sh
+npm install diggerize
+```
+
 ## Usage
 
 ### Import the functions
