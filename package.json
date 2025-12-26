@@ -19,11 +19,16 @@
   },
   "homepage": "https://github.com/kaspernj/diggerize#readme",
   "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "eslint": "^9.36.0",
+    "eslint-plugin-jsdoc": "^50.8.0",
+    "globals": "^16.4.0",
     "jasmine": "^5.7.1",
     "typescript": "^5.9.3"
   },
   "scripts": {
     "build": "rm -rf build && tsc",
+    "lint": "eslint .",
     "prepublishOnly": "npm run build",
     "test": "jasmine",
     "typecheck": "tsc --noEmit",
