@@ -16,9 +16,15 @@ npm install diggerize
 import {dig, digg, digs} from "diggerize"
 ```
 
+Quick summary:
+
+- `dig(...)` returns `undefined` when the path does not exist.
+- `digg(...)` throws when the path does not exist.
+- `digs(...)` throws when any requested top-level key does not exist.
+
 ### dig
 
-Traverses through objects to find the given path.
+Traverses through objects to find the given path. Missing paths return `undefined`.
 
 ```js
 const myObject = {
@@ -31,13 +37,13 @@ const myObject = {
 }
 
 dig(myObject, "people", 0, "firstName") //=> "Kasper"
-dig(myObject, "people", 1, "firstName") //=> null
+dig(myObject, "people", 1, "firstName") //=> undefined
 ```
 
 
 ### digg
 
-This functions like `dig` but it will throw an error if one of the keys isn't found.
+This works like `dig`, but it throws an error if one of the keys is not found.
 
 ```js
 const myObject = {
@@ -55,7 +61,8 @@ digg(myObject, "people", 1, "firstName") //=> Throws an error because 1 isn't fo
 
 ### digs
 
-This will fail is `object` doesn't contain keys named `firstKey` and `secondKey`.
+This throws if `object` does not contain the requested top-level keys.
+
 ```js
 const {firstKey, secondKey} = digs(object, "firstKey", "secondKey")
 ```
