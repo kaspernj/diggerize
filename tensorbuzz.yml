@@ -1,0 +1,22 @@
+# The repository has one validation lane. Ordered path rules use last-match-wins:
+# all changes run the lane except documentation-only changes. Explicit root
+# configuration paths remain included even when the broad rule set changes.
+before_script:
+  - npm install
+builds:
+  checks:
+    name: Checks
+    paths:
+      - "**"
+      - "!**/*.md"
+      - "!*.md"
+      - package.json
+      - package-lock.json
+      - tsconfig.json
+      - eslint.config.js
+      - spec/support/jasmine.json
+      - tensorbuzz.yml
+    script:
+      - npm run typecheck
+      - npm run lint
+      - npm test
